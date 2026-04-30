@@ -10,7 +10,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class RankMenu {
 
@@ -30,23 +29,24 @@ public class RankMenu {
 
         int start = (page - 1) * 45;
         int end = start + 45;
-        int slot = 0;
-
+        
         int playerRankId = plugin.getDatabase().getPlayerRank(player.getUniqueId());
 
-        for (Map.Entry<Integer, RankManager.Rank> entry : plugin.getRankManager().getRanks().entrySet()) {
-            int rankId = entry.getKey();
-            if (rankId < start || rankId >= end) continue;
+        // CORREÇÃO: Loop seguro de 0 a 44 slots para evitar erro de execução
+        for (int i = 0; i < 45; i++) {
+            int rankId = start + i;
+            if (rankId > 100) break;
 
-            RankManager.Rank rank = entry.getValue();
-            inv.setItem(slot, createRankItem(rank, playerRankId));
-            slot++;
+            RankManager.Rank rank = plugin.getRankManager().getRank(rankId);
+            if (rank != null) {
+                inv.setItem(i, createRankItem(rank, playerRankId));
+            }
         }
 
         if (page > 1) {
             inv.setItem(45, createItem(Material.ARROW, mm.getMessage("menu.previous-page")));
         }
-        if (plugin.getRankManager().getRanks().size() > end) {
+        if (plugin.getRankManager().getRanks().size() > end || end < 100) {
             inv.setItem(53, createItem(Material.ARROW, mm.getMessage("menu.next-page")));
         }
 
@@ -73,11 +73,9 @@ public class RankMenu {
         ItemMeta meta = item.getItemMeta();
         
         if (meta != null) {
-            // Aplica as cores no Nome do Rank
             meta.setDisplayName(mm.format(rank.getDisplayName()));
 
             List<String> lore = new ArrayList<>();
-            // Aplica as cores no Status
             lore.add(mm.format(mm.getMessage("menu.item-lore-status").replace("%status%", status)));
             
             if (rank.getId() > 0) {
@@ -87,13 +85,13 @@ public class RankMenu {
                 lore.add(mm.format(mm.getMessage("menu.item-lore-xp").replace("%amount%", String.valueOf(rank.getReqXp()))));
                 lore.add(mm.format(mm.getMessage("menu.item-lore-time").replace("%amount%", String.valueOf(rank.getReqTime()))));
                 
-                if (!rank.getCommands().isEmpty()) {
+                // Verificação de segurança para evitar erro se a lista de comandos for nula
+                if (rank.getCommands() != null && !rank.getCommands().isEmpty()) {
                     lore.add(mm.format("§7- Blocos de Proteção: §e+" + (rank.getId() * 1000)));
                 }
             }
             
             meta.setLore(lore);
-            // Remove as informações de "13 components" e metadados do item
             meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             item.setItemMeta(meta);
         }

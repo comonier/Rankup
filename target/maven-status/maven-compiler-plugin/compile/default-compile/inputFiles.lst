@@ -4,6 +4,7 @@ C:\.mine\.pl\Rankup\src\main\java\com\comonier\DiscordWebhook.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\MenuListener.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\MessageManager.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\RankCommand.java
+C:\.mine\.pl\Rankup\src\main\java\com\comonier\RankListener.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\RankManager.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\RankMenu.java
 C:\.mine\.pl\Rankup\src\main\java\com\comonier\RankTabCompleter.java

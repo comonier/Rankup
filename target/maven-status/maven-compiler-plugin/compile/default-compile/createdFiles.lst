@@ -9,5 +9,6 @@ com\comonier\RankupExpansion.class
 com\comonier\RankTabCompleter.class
 com\comonier\MessageManager.class
 com\comonier\Database.class
+com\comonier\RankListener.class
 com\comonier\RankMenu.class
 com\comonier\Rankup.class
