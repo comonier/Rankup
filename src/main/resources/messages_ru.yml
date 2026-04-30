@@ -1,0 +1,51 @@
+# Файл сообщений - Русский (RU-RU)
+
+prefix: "&a[Rankup] "
+
+no-permission: "&cУ вас нет прав для использования этой команды."
+only-players: "&cЭту команду могут выполнять только игроки."
+plugin-reloaded: "&aНастройки и сообщения успешно перезагружены!"
+invalid-syntax: "&cОй! Используйте команду правильно. Попробуйте просто &e/%label%&c."
+
+# Сообщения команды /rank (Чат)
+rank-status:
+  header: "&e&l=== СТАТУС ПРОГРЕССА ==="
+  player-name: "&fИгрок: &7%player%"
+  current-rank: "&fТекущий ранг: %rank_display%"
+  next-rank: "&fСледующий ранг: %next_rank_display%"
+  
+  # Раздел требований
+  xp: "&fОпыт: &8[&aЕсть: %current_xp%&8][&eНужно: %req_xp%&8][&cОсталось: %missing_xp%&8]"
+  money: "&fДеньги: &8[&aЕсть: %current_money%&8][&eНужно: %req_money%&8][&cОсталось: %missing_money%&8]"
+  playtime: "&fВремя: &8[&aЕсть: %current_time%&8][&eНужно: %req_time%&8][&cОсталось: %missing_time%&8]"
+  
+  footer: "&e&l============================"
+
+# Сообщения GUI меню
+menu:
+  title: "&8Список рангов - Страница %page%"
+  status-completed: "&a&lВЫПОЛНЕНО"
+  status-next: "&e&lСЛЕДУЮЩИЙ"
+  status-locked: "&c&lЗАБЛОКИРОВАНО"
+  previous-page: "&aПредыдущая страница"
+  next-page: "&aСледующая страница"
+  item-lore-status: "&7Статус: %status%"
+  item-lore-req-title: "&fТребования:"
+  item-lore-money: "&7- Деньги: &e$%amount%"
+  item-lore-xp: "&7- Опыт: &e%amount% ур."
+  item-lore-time: "&7- Время: &e%amount% мин"
+
+# Сообщения команды /rankup
+rankup:
+  success: "&a&lНОВЫЙ РАНГ! &fТеперь вы %rank_display%."
+  requirements-not-met: "&cВы еще не выполнили все требования. Используйте &e/rank &cдля проверки."
+  max-rank: "&6Поздравляем! Вы достигли максимального ранга."
+
+# Глобальные оповещения
+broadcast:
+  rankup: "&e&lRANKUP! &fИгрок &b%player% &fповысил свой ранг до %rank_display%!"
+
+# Настройки Discord Webhook
+discord:
+  rankup-title: "Новое повышение на сервере!"
+  rankup-description: "Игрок **%player%** повысил ранг до **%rank_name%**!"

@@ -1,0 +1,51 @@
+# Messages File - English (EN-US)
+
+prefix: "&a[Rankup] "
+
+no-permission: "&cYou do not have permission to use this command."
+only-players: "&cOnly players can execute this command."
+plugin-reloaded: "&aSettings and messages reloaded successfully!"
+invalid-syntax: "&cOops! Use the command correctly. Try just &e/%label%&c."
+
+# /rank command messages (Chat)
+rank-status:
+  header: "&e&l=== PROGRESSION STATUS ==="
+  player-name: "&fPlayer: &7%player%"
+  current-rank: "&fCurrent Rank: %rank_display%"
+  next-rank: "&fNext Rank: %next_rank_display%"
+  
+  # Requirements Section
+  xp: "&fXp: &8[&aCurrent: %current_xp%&8][&eNext: %req_xp%&8][&cMissing: %missing_xp%&8]"
+  money: "&fMoney: &8[&aCurrent: %current_money%&8][&eNext: %req_money%&8][&cMissing: %missing_money%&8]"
+  playtime: "&fTime: &8[&aCurrent: %current_time%&8][&eNext: %req_time%&8][&cMissing: %missing_time%&8]"
+  
+  footer: "&e&l============================"
+
+# GUI Menu Messages
+menu:
+  title: "&8Rank List - Page %page%"
+  status-completed: "&a&lCOMPLETED"
+  status-next: "&e&lNEXT"
+  status-locked: "&c&lLOCKED"
+  previous-page: "&aPrevious Page"
+  next-page: "&aNext Page"
+  item-lore-status: "&7Status: %status%"
+  item-lore-req-title: "&fRequirements:"
+  item-lore-money: "&7- Money: &e$%amount%"
+  item-lore-xp: "&7- XP: &e%amount% levels"
+  item-lore-time: "&7- Time: &e%amount% min"
+
+# /rankup command messages
+rankup:
+  success: "&a&lRANKED UP! &fYou are now %rank_display%."
+  requirements-not-met: "&cYou do not meet all requirements yet. Use &e/rank &cto check."
+  max-rank: "&6Congratulations! You reached the maximum rank."
+
+# Global Broadcasts
+broadcast:
+  rankup: "&e&lRANKUP! &fPlayer &b%player% &fhas promoted to rank %rank_display%!"
+
+# Discord Webhook Settings
+discord:
+  rankup-title: "New Rankup on Server!"
+  rankup-description: "Player **%player%** promoted to rank **%rank_name%**!"

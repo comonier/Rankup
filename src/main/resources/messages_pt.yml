@@ -1,0 +1,51 @@
+# Arquivo de Mensagens - Português (PT-BR)
+
+prefix: "&a[Rankup] "
+
+no-permission: "&cVocê não tem permissão para usar este comando."
+only-players: "&cApenas jogadores podem executar este comando."
+plugin-reloaded: "&aConfigurações e mensagens recarregadas com sucesso!"
+invalid-syntax: "&cOpa! Use o comando de forma correta. Tente apenas &e/%label%&c."
+
+# Mensagens do comando /rank (Chat)
+rank-status:
+  header: "&e&l=== STATUS DE PROGRESSÃO ==="
+  player-name: "&fJogador: &7%player%"
+  current-rank: "&fRank Atual: %rank_display%"
+  next-rank: "&fPróximo Rank: %next_rank_display%"
+  
+  # Seção de Requisitos
+  xp: "&fXp: &8[&aAtual: %current_xp%&8][&ePróximo: %req_xp%&8][&cFalta: %missing_xp%&8]"
+  money: "&fMoney: &8[&aAtual: %current_money%&8][&ePróximo: %req_money%&8][&cFalta: %missing_money%&8]"
+  playtime: "&fTempo: &8[&aAtual: %current_time%&8][&ePróximo: %req_time%&8][&cFalta: %missing_time%&8]"
+  
+  footer: "&e&l============================"
+
+# Mensagens do Menu GUI
+menu:
+  title: "&8Lista de Ranks - Pagina %page%"
+  status-completed: "&a&lCONCLUÍDO"
+  status-next: "&e&lPRÓXIMO"
+  status-locked: "&c&lBLOQUEADO"
+  previous-page: "&aPágina Anterior"
+  next-page: "&aPróxima Página"
+  item-lore-status: "&7Status: %status%"
+  item-lore-req-title: "&fRequisitos:"
+  item-lore-money: "&7- Money: &e$%amount%"
+  item-lore-xp: "&7- XP: &e%amount% níveis"
+  item-lore-time: "&7- Tempo: &e%amount% min"
+
+# Mensagens do comando /rankup
+rankup:
+  success: "&a&lSUBIU DE RANK! &fVocê agora é %rank_display%."
+  requirements-not-met: "&cVocê ainda não possui todos os requisitos para subir de rank. Use &e/rank &cpara verificar."
+  max-rank: "&6Parabéns! Você já atingiu o rank máximo."
+
+# Avisos Globais
+broadcast:
+  rankup: "&e&lRANKUP! &fO jogador &b%player% &fsubiu para o rank %rank_display%!"
+
+# Configurações do Webhook Discord
+discord:
+  rankup-title: "Novo Rankup no Servidor!"
+  rankup-description: "O jogador **%player%** subiu para o rank **%rank_name%**!"
