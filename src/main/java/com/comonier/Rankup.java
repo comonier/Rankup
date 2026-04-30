@@ -23,12 +23,14 @@ public class Rankup extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
+        // 1. Configurar Economia (Vault)
         if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Desativado por falta de dependência: Vault!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
+        // 2. Gerar arquivos e carregar Managers
         saveDefaultConfig();
         createCustomFiles();
         
@@ -37,6 +39,7 @@ public class Rankup extends JavaPlugin {
         this.database = new Database(this);
         this.discordWebhook = new DiscordWebhook(this);
 
+        // 3. Registro de Comandos e TabCompleters
         RankTabCompleter tabCompleter = new RankTabCompleter();
 
         getCommand("rank").setExecutor(new RankCommand(this));
@@ -58,12 +61,18 @@ public class Rankup extends JavaPlugin {
         });
         getCommand("rankreload").setTabCompleter(tabCompleter);
 
+        // 4. Registro de Eventos (Listeners)
         getServer().getPluginManager().registerEvents(new MenuListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandProtectionListener(), this);
+        // Novo Listener: Garante permissões ao entrar no servidor
+        getServer().getPluginManager().registerEvents(new RankListener(this), this);
 
+        // 5. PlaceholderAPI Hook
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new RankupExpansion(this).register();
         }
+
+        getLogger().info("Rankup v1.0 habilitado com protecao de comandos e atualizador de permissoes!");
     }
 
     @Override

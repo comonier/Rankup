@@ -37,10 +37,9 @@ public class MessageManager {
         if (cache.containsKey(path)) return cache.get(path);
         
         String msg = messages.getString(path);
-        if (msg == null) return "§cPath missing: " + path;
+        if (msg == null) return "§c[Erro: Mensagem '" + path + "' nao encontrada]";
         
-        // Converte os códigos '&' para cores reais do Minecraft
-        msg = ChatColor.translateAlternateColorCodes('&', msg);
+        msg = format(msg);
         cache.put(path, msg);
         return msg;
     }
@@ -51,7 +50,9 @@ public class MessageManager {
         
         if (placeholders != null) {
             for (Map.Entry<String, String> entry : placeholders.entrySet()) {
-                message = message.replace(entry.getKey(), ChatColor.translateAlternateColorCodes('&', entry.getValue()));
+                // Proteção contra valores nulos nos placeholders
+                String value = entry.getValue() != null ? entry.getValue() : "";
+                message = message.replace(entry.getKey(), format(value));
             }
         }
         
@@ -62,8 +63,11 @@ public class MessageManager {
         sendMessage(player, path, null);
     }
 
-    // Método utilitário para formatar cores em textos rápidos (como nomes de itens)
+    // Método blindado contra NullPointerException
     public String format(String text) {
+        if (text == null || text.isEmpty()) {
+            return ""; 
+        }
         return ChatColor.translateAlternateColorCodes('&', text);
     }
 }
