@@ -1,0 +1,113 @@
+# +---------------------------------------------------------------------------+
+# |                           Rankup - Ranks Configuration                    |
+# +---------------------------------------------------------------------------+
+# Colors: [] in Dark Gray (&8), 'R' in Blue (&9), Numbers in Orange (&6)
+#
+# Requirements:
+#   money: Amount deducted upon rankup.
+#   xp-levels: XP levels deducted upon rankup.
+#   play-time-minutes: Total playtime required (not deducted).
+#
+# Rewards:
+#   commands: Console commands executed (%player% is replaced by player name).
+#   permissions: LuckPerms permissions granted automatically.
+
+ranks:
+  '0':
+    display-name: "&8[&9R&60&8]"
+    tag: "&8[&9R&60&8]"
+    requirements:
+      money: 0
+      xp-levels: 0
+      play-time-minutes: 0
+    rewards:
+      commands: []
+      permissions: []
+    announce: false
+
+  '1':
+    display-name: "&8[&9R&61&8]"
+    tag: "&8[&9R&61&8]"
+    requirements:
+      money: 1000.0
+      xp-levels: 5
+      play-time-minutes: 60
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 1000"
+      permissions:
+        - "rank.1"
+    announce: true
+
+  '2':
+    display-name: "&8[&9R&62&8]"
+    tag: "&8[&9R&62&8]"
+    requirements:
+      money: 2000.0
+      xp-levels: 10
+      play-time-minutes: 120
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 2000"
+      permissions:
+        - "rank.2"
+    announce: true
+
+  '3':
+    display-name: "&8[&9R&63&8]"
+    tag: "&8[&9R&63&8]"
+    requirements:
+      money: 4000.0
+      xp-levels: 15
+      play-time-minutes: 240
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 3000"
+      permissions:
+        - "rank.3"
+    announce: true
+
+  '4':
+    display-name: "&8[&9R&64&8]"
+    tag: "&8[&9R&64&8]"
+    requirements:
+      money: 8000.0
+      xp-levels: 20
+      play-time-minutes: 480
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 4000"
+      permissions:
+        - "rank.4"
+    announce: true
+
+  '5':
+    display-name: "&8[&9R&65&8]"
+    tag: "&8[&9R&65&8]"
+    requirements:
+      money: 16000.0
+      xp-levels: 25
+      play-time-minutes: 960
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 5000"
+      permissions:
+        - "rank.5"
+    announce: true
+
+  # Ranks 6 to 99 will be automatically calculated if not present here.
+  # You can add them manually following the same pattern.
+
+  '100':
+    display-name: "&8[&9R&6100&8]"
+    tag: "&8[&9R&6100&8]"
+    requirements:
+      money: 10000000.0
+      xp-levels: 500
+      play-time-minutes: 10000
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 100000"
+      permissions:
+        - "rank.100"
+    announce: true

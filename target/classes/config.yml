@@ -1,0 +1,72 @@
+# +---------------------------------------------------------------------------+
+# |                           Rankup Configuration                            |
+# |                      Developed by comonier - v1.0                         |
+# +---------------------------------------------------------------------------+
+
+# Default language for the plugin messages.
+# Options: pt (Portuguese), en (English), es (Spanish), ru (Russian).
+# Example: language: en
+language: pt
+
+# +---------------------------------------------------------------------------+
+# |                             General Settings                              |
+# +---------------------------------------------------------------------------+
+settings:
+  # Should the server announce to everyone when a player ranks up?
+  # true = Send message to all players / false = Silent rankup.
+  broadcast-rankup: true
+  
+  # Internal Tag System (Requires PlaceholderAPI).
+  # If true, the plugin registers %rankup_tag% and %rankup_name% placeholders.
+  enable-tags: true
+
+# +---------------------------------------------------------------------------+
+# |                             Database Settings                             |
+# +---------------------------------------------------------------------------+
+# Storage system for player ranks.
+# SQLite: Creates a local 'database.db' file (Ideal for single servers).
+# MySQL: Connects to an external database (Ideal for networks/BungeeCord).
+database:
+  mysql:
+    # Set to true to use MySQL. If false, SQLite will be used automatically.
+    enabled: false
+    host: "localhost"
+    port: "3306"
+    database: "minecraft"
+    username: "root"
+    password: ""
+
+# +---------------------------------------------------------------------------+
+# |                          Discord Webhook Settings                         |
+# +---------------------------------------------------------------------------+
+# Send a stylish notification to your Discord channel when someone ranks up.
+discord-webhook:
+  # Enable or disable Discord notifications.
+  enabled: false
+  # Your Discord Webhook URL. 
+  # Example: "https://discord.com..."
+  url: "COLE_SEU_WEBHOOK_AQUI"
+  # Name of the bot appearing in Discord.
+  username: "Rankup Bot"
+  # Icon URL for the bot.
+  avatar-url: "https://example.com"
+
+# +---------------------------------------------------------------------------+
+# |                            Plugin Integrations                            |
+# +---------------------------------------------------------------------------+
+# Enable or disable hooks with other plugins.
+hooks:
+  # Grant bonus claim blocks from GriefPrevention on rankup.
+  griefprevention: true
+  # Future support for Slimefun items as requirements/rewards.
+  slimefun: true
+  # Mandatory for money requirements (Requires Vault + Economy plugin).
+  vault: true
+
+# +---------------------------------------------------------------------------+
+# |                             Playtime Settings                             |
+# +---------------------------------------------------------------------------+
+playtime:
+  # If true, the plugin will try to fetch playtime from EssentialsX data.
+  # If false, it uses the native Minecraft 'PLAY_ONE_MINUTE' statistic.
+  use-essentials-playtime: true

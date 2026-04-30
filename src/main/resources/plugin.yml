@@ -1,0 +1,32 @@
+name: Rankup
+version: '${project.version}'
+main: com.comonier.Rankup
+api-version: '1.21'
+author: comonier
+description: Sistema de progressão de 100 ranks com suporte multi-idioma e integração PAPI.
+
+# Comandos principais do plugin
+commands:
+  rank:
+    description: Abre o menu visual e mostra o progresso no chat.
+    usage: /rank
+  rankup:
+    description: Tenta subir para o próximo rank se cumprir os requisitos.
+    usage: /rankup
+  rankreload:
+    description: Recarrega as configurações, mensagens e base de dados.
+    permission: rankup.admin
+
+# Gerenciamento de dependências
+# O Vault é obrigatório para a economia.
+# Os outros são opcionais para evitar conflitos e carregar após eles.
+depend: [Vault]
+softdepend: [PlaceholderAPI, GriefPrevention, RedProtect, Slimefun, WorldGuard, Essentials, VentureChat]
+
+permissions:
+  rankup.admin:
+    description: Permissão total para gerenciar o plugin e recarregar arquivos.
+    default: op
+  rankup.player:
+    description: Permissão para usar os comandos básicos /rank e /rankup.
+    default: true

@@ -1,0 +1,13 @@
+com\comonier\MenuListener.class
+com\comonier\DiscordWebhook.class
+com\comonier\RankManager$Rank.class
+com\comonier\CommandProtectionListener.class
+com\comonier\RankCommand.class
+com\comonier\RankupCommand.class
+com\comonier\RankManager.class
+com\comonier\RankupExpansion.class
+com\comonier\RankTabCompleter.class
+com\comonier\MessageManager.class
+com\comonier\Database.class
+com\comonier\RankMenu.class
+com\comonier\Rankup.class

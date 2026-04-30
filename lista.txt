@@ -1,0 +1,16 @@
+Listagem de caminhos de pasta
+O n�mero de s�rie do volume � 44E2-1797
+C:.
+|   .gitignore
+|   lista.txt
+|   pom.xml
+|   
+|                   
+\---src
+    \---main
+        +---java
+        |   \---com
+        |       \---comonier
+        |               Rankup.java
+        |               
+        \---resources
