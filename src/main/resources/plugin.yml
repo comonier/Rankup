@@ -21,7 +21,7 @@ commands:
 # O Vault é obrigatório para a economia.
 # Os outros são opcionais para evitar conflitos e carregar após eles.
 depend: [Vault]
-softdepend: [PlaceholderAPI, GriefPrevention, RedProtect, Slimefun, WorldGuard, Essentials, VentureChat]
+softdepend: [PlaceholderAPI, LuckPerms, GriefPrevention, RedProtect, Slimefun, WorldGuard, Essentials, VentureChat]
 
 permissions:
   rankup.admin:

@@ -1,21 +1,10 @@
 # +---------------------------------------------------------------------------+
 # |                           Rankup - Ranks Configuration                    |
 # +---------------------------------------------------------------------------+
-# Colors: [] in Dark Gray (&8), 'R' in Blue (&9), Numbers in Orange (&6)
-#
-# Requirements:
-#   money: Amount deducted upon rankup.
-#   xp-levels: XP levels deducted upon rankup.
-#   play-time-minutes: Total playtime required (not deducted).
-#
-# Rewards:
-#   commands: Console commands executed (%player% is replaced by player name).
-#   permissions: LuckPerms permissions granted automatically.
-
 ranks:
   '0':
-    display-name: "&8[&9R&60&8]"
-    tag: "&8[&9R&60&8]"
+    display-name: "&8[&9R&6000&8]"
+    tag: "&8[&9R&6000&8]"
     requirements:
       money: 0
       xp-levels: 0
@@ -26,8 +15,8 @@ ranks:
     announce: false
 
   '1':
-    display-name: "&8[&9R&61&8]"
-    tag: "&8[&9R&61&8]"
+    display-name: "&8[&9R&6001&8]"
+    tag: "&8[&9R&6001&8]"
     requirements:
       money: 1000.0
       xp-levels: 5
@@ -37,11 +26,12 @@ ranks:
         - "adjustbonusclaimblocks %player% 1000"
       permissions:
         - "rank.1"
+        - "iDisguise.disguise.player"
     announce: true
 
   '2':
-    display-name: "&8[&9R&62&8]"
-    tag: "&8[&9R&62&8]"
+    display-name: "&8[&9R&6002&8]"
+    tag: "&8[&9R&6002&8]"
     requirements:
       money: 2000.0
       xp-levels: 10
@@ -51,11 +41,14 @@ ranks:
         - "adjustbonusclaimblocks %player% 2000"
       permissions:
         - "rank.2"
+        - "essentials.head"
+        - "iDisguise.disguise.cat"
+        - "essentials.workbench"
     announce: true
 
   '3':
-    display-name: "&8[&9R&63&8]"
-    tag: "&8[&9R&63&8]"
+    display-name: "&8[&9R&6003&8]"
+    tag: "&8[&9R&6003&8]"
     requirements:
       money: 4000.0
       xp-levels: 15
@@ -65,11 +58,12 @@ ranks:
         - "adjustbonusclaimblocks %player% 3000"
       permissions:
         - "rank.3"
+        - "iDisguise.disguise.wolf"
     announce: true
 
   '4':
-    display-name: "&8[&9R&64&8]"
-    tag: "&8[&9R&64&8]"
+    display-name: "&8[&9R&6004&8]"
+    tag: "&8[&9R&6004&8]"
     requirements:
       money: 8000.0
       xp-levels: 20
@@ -79,11 +73,15 @@ ranks:
         - "adjustbonusclaimblocks %player% 4000"
       permissions:
         - "rank.4"
+        - "iDisguise.disguise.pig"
+        - "essentials.chat.color"
+        - "venturechat.color"
+        - "venturechat.color.legacy"
     announce: true
 
   '5':
-    display-name: "&8[&9R&65&8]"
-    tag: "&8[&9R&65&8]"
+    display-name: "&8[&9R&6005&8]"
+    tag: "&8[&9R&6005&8]"
     requirements:
       money: 16000.0
       xp-levels: 25
@@ -93,10 +91,1405 @@ ranks:
         - "adjustbonusclaimblocks %player% 5000"
       permissions:
         - "rank.5"
+        - "iDisguise.disguise.cow"
     announce: true
 
-  # Ranks 6 to 99 will be automatically calculated if not present here.
-  # You can add them manually following the same pattern.
+  '6':
+    display-name: "&8[&9R&6006&8]"
+    tag: "&8[&9R&6006&8]"
+    requirements:
+      money: 32000.0
+      xp-levels: 30
+      play-time-minutes: 1920
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 6000"
+      permissions:
+        - "rank.6"
+        - "essentials.head"
+        - "iDisguise.disguise.sheep"
+    announce: true
+
+  '7':
+    display-name: "&8[&9R&6007&8]"
+    tag: "&8[&9R&6007&8]"
+    requirements:
+      money: 64000.0
+      xp-levels: 35
+      play-time-minutes: 2880
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 7000"
+      permissions:
+        - "rank.7"
+        - "essentials.head"
+        - "iDisguise.disguise.chicken"
+    announce: true
+
+  '8':
+    display-name: "&8[&9R&6008&8]"
+    tag: "&8[&9R&6008&8]"
+    requirements:
+      money: 128000.0
+      xp-levels: 40
+      play-time-minutes: 3840
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 8000"
+      permissions:
+        - "rank.8"
+        - "iDisguise.disguise.rabbit"
+    announce: true
+
+  '9':
+    display-name: "&8[&9R&6009&8]"
+    tag: "&8[&9R&6009&8]"
+    requirements:
+      money: 256000.0
+      xp-levels: 45
+      play-time-minutes: 4800
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 9000"
+      permissions:
+        - "rank.9"
+        - "iDisguise.disguise.cod"
+    announce: true
+
+  '10':
+    display-name: "&8[&9R&6010&8]"
+    tag: "&8[&9R&6010&8]"
+    requirements:
+      money: 512000.0
+      xp-levels: 50
+      play-time-minutes: 5760
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 10000"
+      permissions:
+        - "rank.10"
+        - "iDisguise.disguise.salmon"
+    announce: true
+
+  '11':
+    display-name: "&8[&9R&6011&8]"
+    tag: "&8[&9R&6011&8]"
+    requirements:
+      money: 600000.0
+      xp-levels: 55
+      play-time-minutes: 6720
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 11000"
+      permissions:
+        - "rank.11"
+        - "iDisguise.disguise.pufferfish"
+    announce: true
+
+  '12':
+    display-name: "&8[&9R&6012&8]"
+    tag: "&8[&9R&6012&8]"
+    requirements:
+      money: 700000.0
+      xp-levels: 60
+      play-time-minutes: 7680
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 12000"
+      permissions:
+        - "rank.12"
+        - "iDisguise.disguise.tropical_fish"
+    announce: true
+
+  '13':
+    display-name: "&8[&9R&6013&8]"
+    tag: "&8[&9R&6013&8]"
+    requirements:
+      money: 800000.0
+      xp-levels: 65
+      play-time-minutes: 8640
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 13000"
+      permissions:
+        - "rank.13"
+        - "iDisguise.disguise.squid"
+    announce: true
+
+  '14':
+    display-name: "&8[&9R&6014&8]"
+    tag: "&8[&9R&6014&8]"
+    requirements:
+      money: 900000.0
+      xp-levels: 70
+      play-time-minutes: 9600
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 14000"
+      permissions:
+        - "rank.14"
+        - "iDisguise.disguise.glow_squid"
+    announce: true
+
+  '15':
+    display-name: "&8[&9R&6015&8]"
+    tag: "&8[&9R&6015&8]"
+    requirements:
+      money: 1000000.0
+      xp-levels: 75
+      play-time-minutes: 10560
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 15000"
+      permissions:
+        - "rank.15"
+        - "iDisguise.disguise.bat"
+    announce: true
+
+  '16':
+    display-name: "&8[&9R&6016&8]"
+    tag: "&8[&9R&6016&8]"
+    requirements:
+      money: 1200000.0
+      xp-levels: 80
+      play-time-minutes: 11520
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 16000"
+      permissions:
+        - "rank.16"
+        - "iDisguise.disguise.fox"
+    announce: true
+
+  '17':
+    display-name: "&8[&9R&6017&8]"
+    tag: "&8[&9R&6017&8]"
+    requirements:
+      money: 1400000.0
+      xp-levels: 85
+      play-time-minutes: 12480
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 17000"
+      permissions:
+        - "rank.17"
+        - "iDisguise.disguise.ocelot"
+    announce: true
+
+  '18':
+    display-name: "&8[&9R&6018&8]"
+    tag: "&8[&9R&6018&8]"
+    requirements:
+      money: 1600000.0
+      xp-levels: 90
+      play-time-minutes: 13440
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 18000"
+      permissions:
+        - "rank.18"
+        - "iDisguise.disguise.parrot"
+    announce: true
+
+  '19':
+    display-name: "&8[&9R&6019&8]"
+    tag: "&8[&9R&6019&8]"
+    requirements:
+      money: 1800000.0
+      xp-levels: 95
+      play-time-minutes: 14400
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 19000"
+      permissions:
+        - "rank.19"
+        - "iDisguise.disguise.bee"
+    announce: true
+
+  '20':
+    display-name: "&8[&9R&6020&8]"
+    tag: "&8[&9R&6020&8]"
+    requirements:
+      money: 2000000.0
+      xp-levels: 100
+      play-time-minutes: 15360
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 20000"
+      permissions:
+        - "rank.20"
+        - "iDisguise.disguise.armadillo"
+    announce: true
+
+  '21':
+    display-name: "&8[&9R&6021&8]"
+    tag: "&8[&9R&6021&8]"
+    requirements:
+      money: 2200000.0
+      xp-levels: 105
+      play-time-minutes: 16320
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 21000"
+      permissions:
+        - "rank.21"
+        - "iDisguise.disguise.turtle"
+    announce: true
+
+  '22':
+    display-name: "&8[&9R&6022&8]"
+    tag: "&8[&9R&6022&8]"
+    requirements:
+      money: 2400000.0
+      xp-levels: 110
+      play-time-minutes: 17280
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 22000"
+      permissions:
+        - "rank.22"
+        - "iDisguise.disguise.frog"
+    announce: true
+
+  '23':
+    display-name: "&8[&9R&6023&8]"
+    tag: "&8[&9R&6023&8]"
+    requirements:
+      money: 2600000.0
+      xp-levels: 115
+      play-time-minutes: 18240
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 23000"
+      permissions:
+        - "rank.23"
+        - "iDisguise.disguise.tadpole"
+    announce: true
+
+  '24':
+    display-name: "&8[&9R&6024&8]"
+    tag: "&8[&9R&6024&8]"
+    requirements:
+      money: 2800000.0
+      xp-levels: 120
+      play-time-minutes: 19200
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 24000"
+      permissions:
+        - "rank.24"
+        - "iDisguise.disguise.axolotl"
+    announce: true
+
+  '25':
+    display-name: "&8[&9R&6025&8]"
+    tag: "&8[&9R&6025&8]"
+    requirements:
+      money: 3000000.0
+      xp-levels: 125
+      play-time-minutes: 20160
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 25000"
+      permissions:
+        - "rank.25"
+        - "iDisguise.disguise.sniffer"
+    announce: true
+
+  '26':
+    display-name: "&8[&9R&6026&8]"
+    tag: "&8[&9R&6026&8]"
+    requirements:
+      money: 3200000.0
+      xp-levels: 130
+      play-time-minutes: 21120
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 26000"
+      permissions:
+        - "rank.26"
+        - "iDisguise.disguise.strider"
+    announce: true
+
+  '27':
+    display-name: "&8[&9R&6027&8]"
+    tag: "&8[&9R&6027&8]"
+    requirements:
+      money: 3400000.0
+      xp-levels: 135
+      play-time-minutes: 22080
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 27000"
+      permissions:
+        - "rank.27"
+        - "iDisguise.disguise.zombie"
+    announce: true
+
+  '28':
+    display-name: "&8[&9R&6028&8]"
+    tag: "&8[&9R&6028&8]"
+    requirements:
+      money: 3600000.0
+      xp-levels: 140
+      play-time-minutes: 23040
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 28000"
+      permissions:
+        - "rank.28"
+        - "iDisguise.disguise.skeleton"
+    announce: true
+
+  '29':
+    display-name: "&8[&9R&6029&8]"
+    tag: "&8[&9R&6029&8]"
+    requirements:
+      money: 3800000.0
+      xp-levels: 145
+      play-time-minutes: 24000
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 29000"
+      permissions:
+        - "rank.29"
+        - "iDisguise.disguise.spider"
+    announce: true
+
+  '30':
+    display-name: "&8[&9R&6030&8]"
+    tag: "&8[&9R&6030&8]"
+    requirements:
+      money: 4000000.0
+      xp-levels: 150
+      play-time-minutes: 24960
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 30000"
+      permissions:
+        - "rank.30"
+        - "iDisguise.disguise.cave_spider"
+    announce: true
+
+  '31':
+    display-name: "&8[&9R&6031&8]"
+    tag: "&8[&9R&6031&8]"
+    requirements:
+      money: 4200000.0
+      xp-levels: 155
+      play-time-minutes: 25920
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 31000"
+      permissions:
+        - "rank.31"
+        - "iDisguise.disguise.creeper"
+    announce: true
+
+  '32':
+    display-name: "&8[&9R&6032&8]"
+    tag: "&8[&9R&6032&8]"
+    requirements:
+      money: 4400000.0
+      xp-levels: 160
+      play-time-minutes: 26880
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 32000"
+      permissions:
+        - "rank.32"
+        - "iDisguise.disguise.slime"
+    announce: true
+
+  '33':
+    display-name: "&8[&9R&6033&8]"
+    tag: "&8[&9R&6033&8]"
+    requirements:
+      money: 4600000.0
+      xp-levels: 165
+      play-time-minutes: 27840
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 33000"
+      permissions:
+        - "rank.33"
+        - "iDisguise.disguise.magma_cube"
+    announce: true
+
+  '34':
+    display-name: "&8[&9R&6034&8]"
+    tag: "&8[&9R&6034&8]"
+    requirements:
+      money: 4800000.0
+      xp-levels: 170
+      play-time-minutes: 28800
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 34000"
+      permissions:
+        - "rank.34"
+        - "iDisguise.disguise.silverfish"
+    announce: true
+
+  '35':
+    display-name: "&8[&9R&6035&8]"
+    tag: "&8[&9R&6035&8]"
+    requirements:
+      money: 5000000.0
+      xp-levels: 175
+      play-time-minutes: 29760
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 35000"
+      permissions:
+        - "rank.35"
+        - "iDisguise.disguise.endermite"
+    announce: true
+
+  '36':
+    display-name: "&8[&9R&6036&8]"
+    tag: "&8[&9R&6036&8]"
+    requirements:
+      money: 5200000.0
+      xp-levels: 180
+      play-time-minutes: 30720
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 36000"
+      permissions:
+        - "rank.36"
+        - "iDisguise.disguise.husk"
+    announce: true
+
+  '37':
+    display-name: "&8[&9R&6037&8]"
+    tag: "&8[&9R&6037&8]"
+    requirements:
+      money: 5400000.0
+      xp-levels: 185
+      play-time-minutes: 31680
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 37000"
+      permissions:
+        - "rank.37"
+        - "iDisguise.disguise.drowned"
+    announce: true
+
+  '38':
+    display-name: "&8[&9R&6038&8]"
+    tag: "&8[&9R&6038&8]"
+    requirements:
+      money: 5600000.0
+      xp-levels: 190
+      play-time-minutes: 32640
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 38000"
+      permissions:
+        - "rank.38"
+        - "iDisguise.disguise.stray"
+    announce: true
+
+  '39':
+    display-name: "&8[&9R&6039&8]"
+    tag: "&8[&9R&6039&8]"
+    requirements:
+      money: 5800000.0
+      xp-levels: 195
+      play-time-minutes: 33600
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 39000"
+      permissions:
+        - "rank.39"
+        - "iDisguise.disguise.bogged"
+    announce: true
+
+  '40':
+    display-name: "&8[&9R&6040&8]"
+    tag: "&8[&9R&6040&8]"
+    requirements:
+      money: 6000000.0
+      xp-levels: 200
+      play-time-minutes: 34560
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 40000"
+      permissions:
+        - "rank.40"
+        - "iDisguise.disguise.phantom"
+    announce: true
+
+  '41':
+    display-name: "&8[&9R&6041&8]"
+    tag: "&8[&9R&6041&8]"
+    requirements:
+      money: 6200000.0
+      xp-levels: 205
+      play-time-minutes: 35520
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 41000"
+      permissions:
+        - "rank.41"
+        - "iDisguise.disguise.blaze"
+    announce: true
+
+  '42':
+    display-name: "&8[&9R&6042&8]"
+    tag: "&8[&9R&6042&8]"
+    requirements:
+      money: 6400000.0
+      xp-levels: 210
+      play-time-minutes: 36480
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 42000"
+      permissions:
+        - "rank.42"
+        - "iDisguise.disguise.ghast"
+    announce: true
+
+  '43':
+    display-name: "&8[&9R&6043&8]"
+    tag: "&8[&9R&6043&8]"
+    requirements:
+      money: 6600000.0
+      xp-levels: 215
+      play-time-minutes: 37440
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 43000"
+      permissions:
+        - "rank.43"
+        - "iDisguise.disguise.enderman"
+    announce: true
+
+  '44':
+    display-name: "&8[&9R&6044&8]"
+    tag: "&8[&9R&6044&8]"
+    requirements:
+      money: 6800000.0
+      xp-levels: 220
+      play-time-minutes: 38400
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 44000"
+      permissions:
+        - "rank.44"
+        - "iDisguise.disguise.shulker"
+    announce: true
+
+  '45':
+    display-name: "&8[&9R&6045&8]"
+    tag: "&8[&9R&6045&8]"
+    requirements:
+      money: 7000000.0
+      xp-levels: 225
+      play-time-minutes: 39360
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 45000"
+      permissions:
+        - "rank.45"
+        - "iDisguise.disguise.guardian"
+    announce: true
+
+  '46':
+    display-name: "&8[&9R&6046&8]"
+    tag: "&8[&9R&6046&8]"
+    requirements:
+      money: 7200000.0
+      xp-levels: 230
+      play-time-minutes: 40320
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 46000"
+      permissions:
+        - "rank.46"
+        - "iDisguise.disguise.elder_guardian"
+    announce: true
+
+  '47':
+    display-name: "&8[&9R&6047&8]"
+    tag: "&8[&9R&6047&8]"
+    requirements:
+      money: 7400000.0
+      xp-levels: 235
+      play-time-minutes: 41280
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 47000"
+      permissions:
+        - "rank.47"
+        - "iDisguise.disguise.evoker"
+    announce: true
+
+  '48':
+    display-name: "&8[&9R&6048&8]"
+    tag: "&8[&9R&6048&8]"
+    requirements:
+      money: 7600000.0
+      xp-levels: 240
+      play-time-minutes: 42240
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 48000"
+      permissions:
+        - "rank.48"
+        - "iDisguise.disguise.vex"
+    announce: true
+
+  '49':
+    display-name: "&8[&9R&6049&8]"
+    tag: "&8[&9R&6049&8]"
+    requirements:
+      money: 7800000.0
+      xp-levels: 245
+      play-time-minutes: 43200
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 49000"
+      permissions:
+        - "rank.49"
+        - "iDisguise.disguise.vindicator"
+    announce: true
+
+  '50':
+    display-name: "&8[&9R&6050&8]"
+    tag: "&8[&9R&6050&8]"
+    requirements:
+      money: 8000000.0
+      xp-levels: 250
+      play-time-minutes: 44160
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 50000"
+      permissions:
+        - "rank.50"
+        - "iDisguise.disguise.pillager"
+    announce: true
+
+  '51':
+    display-name: "&8[&9R&6051&8]"
+    tag: "&8[&9R&6051&8]"
+    requirements:
+      money: 8200000.0
+      xp-levels: 255
+      play-time-minutes: 45120
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 51000"
+      permissions:
+        - "rank.51"
+        - "iDisguise.disguise.ravager"
+    announce: true
+
+  '52':
+    display-name: "&8[&9R&6052&8]"
+    tag: "&8[&9R&6052&8]"
+    requirements:
+      money: 8400000.0
+      xp-levels: 260
+      play-time-minutes: 46080
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 52000"
+      permissions:
+        - "rank.52"
+        - "iDisguise.disguise.witch"
+    announce: true
+
+  '53':
+    display-name: "&8[&9R&6053&8]"
+    tag: "&8[&9R&6053&8]"
+    requirements:
+      money: 8600000.0
+      xp-levels: 265
+      play-time-minutes: 47040
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 53000"
+      permissions:
+        - "rank.53"
+        - "iDisguise.disguise.hoglin"
+    announce: true
+
+  '54':
+    display-name: "&8[&9R&6054&8]"
+    tag: "&8[&9R&6054&8]"
+    requirements:
+      money: 8800000.0
+      xp-levels: 270
+      play-time-minutes: 48000
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 54000"
+      permissions:
+        - "rank.54"
+        - "iDisguise.disguise.zoglin"
+    announce: true
+
+  '55':
+    display-name: "&8[&9R&6055&8]"
+    tag: "&8[&9R&6055&8]"
+    requirements:
+      money: 9000000.0
+      xp-levels: 275
+      play-time-minutes: 48960
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 55000"
+      permissions:
+        - "rank.55"
+        - "iDisguise.disguise.piglin"
+    announce: true
+
+  '56':
+    display-name: "&8[&9R&6056&8]"
+    tag: "&8[&9R&6056&8]"
+    requirements:
+      money: 9200000.0
+      xp-levels: 280
+      play-time-minutes: 49920
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 56000"
+      permissions:
+        - "rank.56"
+        - "iDisguise.disguise.piglin_brute"
+    announce: true
+
+  '57':
+    display-name: "&8[&9R&6057&8]"
+    tag: "&8[&9R&6057&8]"
+    requirements:
+      money: 9400000.0
+      xp-levels: 285
+      play-time-minutes: 50880
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 57000"
+      permissions:
+        - "rank.57"
+        - "iDisguise.disguise.zombified_piglin"
+    announce: true
+
+  '58':
+    display-name: "&8[&9R&6058&8]"
+    tag: "&8[&9R&6058&8]"
+    requirements:
+      money: 9600000.0
+      xp-levels: 290
+      play-time-minutes: 51840
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 58000"
+      permissions:
+        - "rank.58"
+        - "iDisguise.disguise.wither_skeleton"
+    announce: true
+
+  '59':
+    display-name: "&8[&9R&6059&8]"
+    tag: "&8[&9R&6059&8]"
+    requirements:
+      money: 9800000.0
+      xp-levels: 295
+      play-time-minutes: 52800
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 59000"
+      permissions:
+        - "rank.59"
+        - "iDisguise.disguise.breeze"
+    announce: true
+
+  '60':
+    display-name: "&8[&9R&6060&8]"
+    tag: "&8[&9R&6060&8]"
+    requirements:
+      money: 10000000.0
+      xp-levels: 300
+      play-time-minutes: 53760
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 60000"
+      permissions:
+        - "rank.60"
+        - "iDisguise.disguise.creaking"
+    announce: true
+
+  '61':
+    display-name: "&8[&9R&6061&8]"
+    tag: "&8[&9R&6061&8]"
+    requirements:
+      money: 10200000.0
+      xp-levels: 305
+      play-time-minutes: 54720
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 61000"
+      permissions:
+        - "rank.61"
+        - "iDisguise.disguise.villager"
+    announce: true
+
+  '62':
+    display-name: "&8[&9R&6062&8]"
+    tag: "&8[&9R&6062&8]"
+    requirements:
+      money: 10400000.0
+      xp-levels: 310
+      play-time-minutes: 55680
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 62000"
+      permissions:
+        - "rank.62"
+        - "iDisguise.disguise.zombie_villager"
+    announce: true
+
+  '63':
+    display-name: "&8[&9R&6063&8]"
+    tag: "&8[&9R&6063&8]"
+    requirements:
+      money: 10600000.0
+      xp-levels: 315
+      play-time-minutes: 56640
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 63000"
+      permissions:
+        - "rank.63"
+        - "iDisguise.disguise.wandering_trader"
+    announce: true
+
+  '64':
+    display-name: "&8[&9R&6064&8]"
+    tag: "&8[&9R&6064&8]"
+    requirements:
+      money: 10800000.0
+      xp-levels: 320
+      play-time-minutes: 57600
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 64000"
+      permissions:
+        - "rank.64"
+        - "iDisguise.disguise.iron_golem"
+    announce: true
+
+  '65':
+    display-name: "&8[&9R&6065&8]"
+    tag: "&8[&9R&6065&8]"
+    requirements:
+      money: 11000000.0
+      xp-levels: 325
+      play-time-minutes: 58560
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 65000"
+      permissions:
+        - "rank.65"
+        - "iDisguise.disguise.snow_golem"
+    announce: true
+
+  '66':
+    display-name: "&8[&9R&6066&8]"
+    tag: "&8[&9R&6066&8]"
+    requirements:
+      money: 11200000.0
+      xp-levels: 330
+      play-time-minutes: 59520
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 66000"
+      permissions:
+        - "rank.66"
+        - "iDisguise.disguise.horse"
+    announce: true
+
+  '67':
+    display-name: "&8[&9R&6067&8]"
+    tag: "&8[&9R&6067&8]"
+    requirements:
+      money: 11400000.0
+      xp-levels: 335
+      play-time-minutes: 60480
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 67000"
+      permissions:
+        - "rank.67"
+        - "iDisguise.disguise.donkey"
+    announce: true
+
+  '68':
+    display-name: "&8[&9R&6068&8]"
+    tag: "&8[&9R&6068&8]"
+    requirements:
+      money: 11600000.0
+      xp-levels: 340
+      play-time-minutes: 61440
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 68000"
+      permissions:
+        - "rank.68"
+        - "iDisguise.disguise.mule"
+    announce: true
+
+  '69':
+    display-name: "&8[&9R&6069&8]"
+    tag: "&8[&9R&6069&8]"
+    requirements:
+      money: 11800000.0
+      xp-levels: 345
+      play-time-minutes: 62400
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 69000"
+      permissions:
+        - "rank.69"
+        - "iDisguise.disguise.skeleton_horse"
+    announce: true
+
+  '70':
+    display-name: "&8[&9R&6070&8]"
+    tag: "&8[&9R&6070&8]"
+    requirements:
+      money: 12000000.0
+      xp-levels: 350
+      play-time-minutes: 63360
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 70000"
+      permissions:
+        - "rank.70"
+        - "iDisguise.disguise.zombie_horse"
+    announce: true
+
+  '71':
+    display-name: "&8[&9R&6071&8]"
+    tag: "&8[&9R&6071&8]"
+    requirements:
+      money: 12200000.0
+      xp-levels: 355
+      play-time-minutes: 64320
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 71000"
+      permissions:
+        - "rank.71"
+        - "iDisguise.disguise.camel"
+    announce: true
+
+  '72':
+    display-name: "&8[&9R&6072&8]"
+    tag: "&8[&9R&6072&8]"
+    requirements:
+      money: 12400000.0
+      xp-levels: 360
+      play-time-minutes: 65280
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 72000"
+      permissions:
+        - "rank.72"
+        - "iDisguise.disguise.llama"
+    announce: true
+
+  '73':
+    display-name: "&8[&9R&6073&8]"
+    tag: "&8[&9R&6073&8]"
+    requirements:
+      money: 12600000.0
+      xp-levels: 365
+      play-time-minutes: 66240
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 73000"
+      permissions:
+        - "rank.73"
+        - "iDisguise.disguise.trader_llama"
+    announce: true
+
+  '74':
+    display-name: "&8[&9R&6074&8]"
+    tag: "&8[&9R&6074&8]"
+    requirements:
+      money: 12800000.0
+      xp-levels: 370
+      play-time-minutes: 67200
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 74000"
+      permissions:
+        - "rank.74"
+        - "iDisguise.disguise.panda"
+    announce: true
+
+  '75':
+    display-name: "&8[&9R&6075&8]"
+    tag: "&8[&9R&6075&8]"
+    requirements:
+      money: 13000000.0
+      xp-levels: 375
+      play-time-minutes: 68160
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 75000"
+      permissions:
+        - "rank.75"
+        - "iDisguise.disguise.polar_bear"
+    announce: true
+
+  '76':
+    display-name: "&8[&9R&6076&8]"
+    tag: "&8[&9R&6076&8]"
+    requirements:
+      money: 13200000.0
+      xp-levels: 380
+      play-time-minutes: 69120
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 76000"
+      permissions:
+        - "rank.76"
+        - "iDisguise.disguise.mooshroom"
+    announce: true
+
+  '77':
+    display-name: "&8[&9R&6077&8]"
+    tag: "&8[&9R&6077&8]"
+    requirements:
+      money: 13400000.0
+      xp-levels: 385
+      play-time-minutes: 70080
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 77000"
+      permissions:
+        - "rank.77"
+        - "iDisguise.disguise.mushroom_cow"
+    announce: true
+
+  '78':
+    display-name: "&8[&9R&6078&8]"
+    tag: "&8[&9R&6078&8]"
+    requirements:
+      money: 13600000.0
+      xp-levels: 390
+      play-time-minutes: 71040
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 78000"
+      permissions:
+        - "rank.78"
+        - "iDisguise.disguise.goat"
+    announce: true
+
+  '79':
+    display-name: "&8[&9R&6079&8]"
+    tag: "&8[&9R&6079&8]"
+    requirements:
+      money: 13800000.0
+      xp-levels: 395
+      play-time-minutes: 72000
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 79000"
+      permissions:
+        - "rank.79"
+        - "iDisguise.disguise.dolphin"
+    announce: true
+
+  '80':
+    display-name: "&8[&9R&6080&8]"
+    tag: "&8[&9R&6080&8]"
+    requirements:
+      money: 14000000.0
+      xp-levels: 400
+      play-time-minutes: 72960
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 80000"
+      permissions:
+        - "rank.80"
+        - "iDisguise.disguise.allay"
+    announce: true
+
+  '81':
+    display-name: "&8[&9R&6081&8]"
+    tag: "&8[&9R&6081&8]"
+    requirements:
+      money: 14200000.0
+      xp-levels: 405
+      play-time-minutes: 73920
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 81000"
+      permissions:
+        - "rank.81"
+        - "iDisguise.disguise.giant"
+    announce: true
+
+  '82':
+    display-name: "&8[&9R&6082&8]"
+    tag: "&8[&9R&6082&8]"
+    requirements:
+      money: 14400000.0
+      xp-levels: 410
+      play-time-minutes: 74880
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 82000"
+      permissions:
+        - "rank.82"
+        - "iDisguise.disguise.illusioner"
+    announce: true
+
+  '83':
+    display-name: "&8[&9R&6083&8]"
+    tag: "&8[&9R&6083&8]"
+    requirements:
+      money: 14600000.0
+      xp-levels: 415
+      play-time-minutes: 75840
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 83000"
+      permissions:
+        - "rank.83"
+        - "iDisguise.disguise.warden"
+    announce: true
+
+  '84':
+    display-name: "&8[&9R&6084&8]"
+    tag: "&8[&9R&6084&8]"
+    requirements:
+      money: 14800000.0
+      xp-levels: 420
+      play-time-minutes: 76800
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 84000"
+      permissions:
+        - "rank.84"
+        - "iDisguise.disguise.wither"
+    announce: true
+
+  '85':
+    display-name: "&8[&9R&6085&8]"
+    tag: "&8[&9R&6085&8]"
+    requirements:
+      money: 15000000.0
+      xp-levels: 425
+      play-time-minutes: 77760
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 85000"
+      permissions:
+        - "rank.85"
+    announce: true
+
+  '86':
+    display-name: "&8[&9R&6086&8]"
+    tag: "&8[&9R&6086&8]"
+    requirements:
+      money: 15200000.0
+      xp-levels: 430
+      play-time-minutes: 78720
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 86000"
+      permissions:
+        - "rank.86"
+    announce: true
+
+  '87':
+    display-name: "&8[&9R&6087&8]"
+    tag: "&8[&9R&6087&8]"
+    requirements:
+      money: 15400000.0
+      xp-levels: 435
+      play-time-minutes: 79680
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 87000"
+      permissions:
+        - "rank.87"
+    announce: true
+
+  '88':
+    display-name: "&8[&9R&6088&8]"
+    tag: "&8[&9R&6088&8]"
+    requirements:
+      money: 15600000.0
+      xp-levels: 440
+      play-time-minutes: 80640
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 88000"
+      permissions:
+        - "rank.88"
+    announce: true
+
+  '89':
+    display-name: "&8[&9R&6089&8]"
+    tag: "&8[&9R&6089&8]"
+    requirements:
+      money: 15800000.0
+      xp-levels: 445
+      play-time-minutes: 81600
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 89000"
+      permissions:
+        - "rank.89"
+    announce: true
+
+  '90':
+    display-name: "&8[&9R&6090&8]"
+    tag: "&8[&9R&6090&8]"
+    requirements:
+      money: 16000000.0
+      xp-levels: 450
+      play-time-minutes: 82560
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 90000"
+      permissions:
+        - "rank.90"
+    announce: true
+
+  '91':
+    display-name: "&8[&9R&6091&8]"
+    tag: "&8[&9R&6091&8]"
+    requirements:
+      money: 16200000.0
+      xp-levels: 455
+      play-time-minutes: 83520
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 91000"
+      permissions:
+        - "rank.91"
+    announce: true
+
+  '92':
+    display-name: "&8[&9R&6092&8]"
+    tag: "&8[&9R&6092&8]"
+    requirements:
+      money: 16400000.0
+      xp-levels: 460
+      play-time-minutes: 84480
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 92000"
+      permissions:
+        - "rank.92"
+    announce: true
+
+  '93':
+    display-name: "&8[&9R&6093&8]"
+    tag: "&8[&9R&6093&8]"
+    requirements:
+      money: 16600000.0
+      xp-levels: 465
+      play-time-minutes: 85440
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 93000"
+      permissions:
+        - "rank.93"
+    announce: true
+
+  '94':
+    display-name: "&8[&9R&6094&8]"
+    tag: "&8[&9R&6094&8]"
+    requirements:
+      money: 16800000.0
+      xp-levels: 470
+      play-time-minutes: 86400
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 94000"
+      permissions:
+        - "rank.94"
+    announce: true
+
+  '95':
+    display-name: "&8[&9R&6095&8]"
+    tag: "&8[&9R&6095&8]"
+    requirements:
+      money: 17000000.0
+      xp-levels: 475
+      play-time-minutes: 87360
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 95000"
+      permissions:
+        - "rank.95"
+    announce: true
+
+  '96':
+    display-name: "&8[&9R&6096&8]"
+    tag: "&8[&9R&6096&8]"
+    requirements:
+      money: 17200000.0
+      xp-levels: 480
+      play-time-minutes: 88320
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 96000"
+      permissions:
+        - "rank.96"
+    announce: true
+
+  '97':
+    display-name: "&8[&9R&6097&8]"
+    tag: "&8[&9R&6097&8]"
+    requirements:
+      money: 17400000.0
+      xp-levels: 485
+      play-time-minutes: 89280
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 97000"
+      permissions:
+        - "rank.97"
+    announce: true
+
+  '98':
+    display-name: "&8[&9R&6098&8]"
+    tag: "&8[&9R&6098&8]"
+    requirements:
+      money: 17600000.0
+      xp-levels: 490
+      play-time-minutes: 90240
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 98000"
+      permissions:
+        - "rank.98"
+    announce: true
+
+  '99':
+    display-name: "&8[&9R&6099&8]"
+    tag: "&8[&9R&6099&8]"
+    requirements:
+      money: 17800000.0
+      xp-levels: 495
+      play-time-minutes: 91200
+    rewards:
+      commands:
+        - "adjustbonusclaimblocks %player% 99000"
+      permissions:
+        - "rank.99"
+    announce: true
 
   '100':
     display-name: "&8[&9R&6100&8]"
@@ -110,4 +1503,9 @@ ranks:
         - "adjustbonusclaimblocks %player% 100000"
       permissions:
         - "rank.100"
+        - "essentials.fly"
+        - "nss.change.all"
+        - "nss.collect.all"
+        - "nss.drop"
+        - "nss.place.all"
     announce: true

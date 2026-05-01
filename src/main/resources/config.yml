@@ -12,6 +12,9 @@ language: pt
 # |                             General Settings                              |
 # +---------------------------------------------------------------------------+
 settings:
+  # Formatação de números e moedas (Ex: pt-BR, en-US, es-ES)
+  # Isso mudará o 1000.00 para 1.000,00 (pt-BR) ou 1,000.00 (en-US)
+  money-format-locale: "pt-BR"
   # Should the server announce to everyone when a player ranks up?
   # true = Send message to all players / false = Silent rankup.
   broadcast-rankup: true

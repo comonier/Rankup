@@ -6,8 +6,10 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class Rankup extends JavaPlugin {
 
@@ -18,35 +20,30 @@ public class Rankup extends JavaPlugin {
     private RankManager rankManager;
     private Database database;
     private DiscordWebhook discordWebhook;
+    private NumberFormat moneyFormatter;
 
     @Override
     public void onEnable() {
         instance = this;
 
-        // 1. Configurar Economia (Vault)
         if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Desativado por falta de dependência: Vault!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
-        // 2. Gerar arquivos e carregar Managers
         saveDefaultConfig();
         createCustomFiles();
+        setupMoneyFormatter();
         
         this.messageManager = new MessageManager(this);
         this.rankManager = new RankManager(this);
         this.database = new Database(this);
         this.discordWebhook = new DiscordWebhook(this);
 
-        // 3. Registro de Comandos e TabCompleters
         RankTabCompleter tabCompleter = new RankTabCompleter();
-
         getCommand("rank").setExecutor(new RankCommand(this));
-        getCommand("rank").setTabCompleter(tabCompleter);
-
         getCommand("rankup").setExecutor(new RankupCommand(this));
-        getCommand("rankup").setTabCompleter(tabCompleter);
         
         getCommand("rankreload").setExecutor((sender, command, label, args) -> {
             if (!sender.hasPermission("rankup.admin")) {
@@ -54,32 +51,45 @@ public class Rankup extends JavaPlugin {
                 return true;
             }
             reloadConfig();
+            setupMoneyFormatter(); // Recarrega o formato caso mude no config
             messageManager.loadMessages();
             rankManager.loadRanks();
             sender.sendMessage(messageManager.getMessage("plugin-reloaded"));
             return true;
         });
-        getCommand("rankreload").setTabCompleter(tabCompleter);
 
-        // 4. Registro de Eventos (Listeners)
         getServer().getPluginManager().registerEvents(new MenuListener(this), this);
         getServer().getPluginManager().registerEvents(new CommandProtectionListener(), this);
-        // Novo Listener: Garante permissões ao entrar no servidor
         getServer().getPluginManager().registerEvents(new RankListener(this), this);
 
-        // 5. PlaceholderAPI Hook
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new RankupExpansion(this).register();
         }
+    }
 
-        getLogger().info("Rankup v1.0 habilitado com protecao de comandos e atualizador de permissoes!");
+    private void setupMoneyFormatter() {
+        String localeTag = getConfig().getString("settings.money-format-locale", "pt-BR");
+        try {
+            Locale locale = Locale.forLanguageTag(localeTag);
+            this.moneyFormatter = NumberFormat.getCurrencyInstance(locale);
+        } catch (Exception e) {
+            this.moneyFormatter = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+            getLogger().warning("Locale invalido no config. Usando pt-BR por padrao.");
+        }
+    }
+
+    public String formatMoney(double amount) {
+        // Formata e remove o simbolo da moeda (R$, $, etc) para manter o chat limpo
+        return moneyFormatter.format(amount)
+                .replaceAll("[^0-9,.]", " ")
+                .trim()
+                .replace(" ,", ",") // Limpeza de espaços residuais
+                .replace(" .", ".");
     }
 
     @Override
     public void onDisable() {
-        if (database != null) {
-            database.close();
-        }
+        if (database != null) database.close();
     }
 
     private boolean setupEconomy() {
@@ -91,14 +101,10 @@ public class Rankup extends JavaPlugin {
     }
 
     private void createCustomFiles() {
-        List<String> files = Arrays.asList(
-                "messages_pt.yml", "messages_en.yml", "messages_es.yml", "messages_ru.yml", "ranks.yml"
-        );
+        List<String> files = Arrays.asList("messages_pt.yml", "messages_en.yml", "messages_es.yml", "messages_ru.yml", "ranks.yml");
         for (String fileName : files) {
             File file = new File(getDataFolder(), fileName);
-            if (!file.exists()) {
-                saveResource(fileName, false);
-            }
+            if (!file.exists()) saveResource(fileName, false);
         }
     }
 

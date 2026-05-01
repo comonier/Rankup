@@ -7,7 +7,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -34,6 +33,8 @@ public class RankManager {
                     int id = Integer.parseInt(key);
                     String displayName = section.getString(key + ".display-name");
                     String tag = section.getString(key + ".tag");
+                    
+                    // Se o requisito não existir no arquivo, ele virá como 0.0 ou 0
                     double money = section.getDouble(key + ".requirements.money");
                     int xp = section.getInt(key + ".requirements.xp-levels");
                     int time = section.getInt(key + ".requirements.play-time-minutes");
@@ -48,51 +49,13 @@ public class RankManager {
     }
 
     public Rank getRank(int id) {
-        if (id < 0) return null;
-        if (ranks.containsKey(id)) return ranks.get(id);
-        
-        if (id <= 100) {
-            return generateFallbackRank(id);
-        }
-        return null;
+        // Agora o plugin APENAS retorna o que estiver no Map (vindo do arquivo)
+        return ranks.get(id);
     }
 
     public Rank getNextRank(int currentId) {
-        int nextId = currentId + 1;
-        if (nextId > 100) return null;
-        return getRank(nextId);
-    }
-
-    private Rank generateFallbackRank(int id) {
-        Rank lastKnown = ranks.floorEntry(id) != null ? ranks.floorEntry(id).getValue() : 
-                         new Rank(0, "&8[&9R&60&8]", "&8[&9R&60&8]", 0.0, 0, 0, new ArrayList<>(), new ArrayList<>());
-        
-        int diff = id - lastKnown.getId();
-        
-        // Progressão suave: soma 1000 de money e 5 de XP por nível faltante
-        double moneyReq = lastKnown.getReqMoney() + (diff * 1000.0); 
-        int xpReq = lastKnown.getReqXp() + (diff * 5);
-        int timeReq = lastKnown.getReqTime() + (diff * 60);
-
-        // Blocos de proteção acompanham o ID (Rank 2 = 2000 blocos)
-        long claimBlocks = 1000L * id; 
-        
-        List<String> autoCmds = new ArrayList<>();
-        autoCmds.add("adjustbonusclaimblocks %player% " + claimBlocks);
-        
-        List<String> autoPerms = new ArrayList<>();
-        autoPerms.add("rank." + id);
-
-        return new Rank(
-            id,
-            "&8[&9R&6" + id + "&8]",
-            "&8[&9R&6" + id + "&8]",
-            moneyReq,
-            xpReq,
-            timeReq,
-            autoCmds,
-            autoPerms
-        );
+        // Busca o próximo ID que realmente existe no arquivo
+        return getRank(currentId + 1);
     }
 
     public FileConfiguration getRanksConfig() {
@@ -104,7 +67,8 @@ public class RankManager {
     }
 
     public int getPlayerPlayTimeMinutes(Player player) {
-        return player.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20 / 60;
+        // Cálculo do tempo (Ticks -> Segundos -> Minutos)
+        return (int) (player.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20 / 60);
     }
 
     public static class Rank {

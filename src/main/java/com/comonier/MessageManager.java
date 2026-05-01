@@ -50,7 +50,6 @@ public class MessageManager {
         
         if (placeholders != null) {
             for (Map.Entry<String, String> entry : placeholders.entrySet()) {
-                // Proteção contra valores nulos nos placeholders
                 String value = entry.getValue() != null ? entry.getValue() : "";
                 message = message.replace(entry.getKey(), format(value));
             }
@@ -63,7 +62,18 @@ public class MessageManager {
         sendMessage(player, path, null);
     }
 
-    // Método blindado contra NullPointerException
+    // Novo método para formatar placeholders SEM enviar o prefixo
+    public String format(String message, Map<String, String> placeholders) {
+        if (message == null) return "";
+        if (placeholders != null) {
+            for (Map.Entry<String, String> entry : placeholders.entrySet()) {
+                String value = entry.getValue() != null ? entry.getValue() : "";
+                message = message.replace(entry.getKey(), format(value));
+            }
+        }
+        return format(message);
+    }
+
     public String format(String text) {
         if (text == null || text.isEmpty()) {
             return ""; 
